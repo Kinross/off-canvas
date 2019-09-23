@@ -1,0 +1,171 @@
+<html lang="en" dir="ltr" class=""><head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+
+  <title>HTML documentation index - HTML: Hypertext Markup Language | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+
+  <style>
+
+
+* {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+
+}
+
+nav {
+  z-index: 1000;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+header:nth-child(1) {
+  position: fixed;
+  top:0;
+}
+
+.banner:nth-child(1) {
+  display: none;
+}
+buton {
+  display: none;
+  background-color: orange;
+}
+nav {
+  position: fixed;
+  bottom:0;
+}
+
+  section {
+
+    padding-top: 40px;
+    display: inline-block;
+    width:50%;
+    height: 70vh;
+  }
+
+  header {
+    background-color: blue;
+  }
+
+  section:nth-child(3) {
+    background-color: lightblue;
+  }
+
+  section:nth-child(1) {
+    background-color: pink;
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    .banner:nth-child(1) {
+      display: inline-block;
+    }
+    buton {
+      display: inline-block;
+    }
+    section {
+      display: inline-block;
+      position:static;
+      width:100%;
+    }
+
+    header {
+      width:100%;
+    }
+
+    section:nth-child(3) {
+      position: absolute;
+      top:0;
+      left:100%;
+      weight:100%;
+      height: 80vh;
+    }
+
+
+    .transform {
+      -webkit-transition: all 2s ease;
+      -moz-transition: all 2s ease;
+      -o-transition: all 2s ease;
+      -ms-transition: all 2s ease;
+      transition: all 2s ease;
+    }
+
+    section.transform-active {
+      left:0;
+
+    }
+
+
+
+
+  }
+
+  </style>
+
+</head>
+<body data-slug="Web/HTML/Index" contextmenu="edit-history-menu" data-search-url="" class="document">
+
+
+<nav class="menu" role="navigation">
+  <ul>
+    <li><a>Item 1</a></li>
+    <li><a>Item 2</a></li>
+    <li><a>Item 3</a></li>
+    <li><a>Item 4</a></li>
+  </ul>
+</nav>
+
+<header class="banner" role="banner">
+   <h1>Bookshelf</h1>
+</header>
+
+<main><!--
+--><section>
+      <h2>component here</h2>
+      <h2>component here</h2>
+      <h2>component here</h2>
+      <h3>component here</h3>
+      <p>component here</p>
+      <h3>component here</h3>
+      <p>component here</p>
+      <h2>component here</h2>
+   </section><!--
+   --><buton class="button_">See Blank slate</buton><!--
+   --><section class="transform" id="off-canvas">
+     <header class="banner back_" role="banner">
+        <h1>Back</h1>
+     </header>
+      <h2>Blank slate</h2>
+   </section><!--
+--></main>
+
+
+<script>
+
+  var element = document.getElementById("off-canvas");
+
+  document.querySelector(".button_").addEventListener("click", (e) => {
+
+    element.classList.add("transform-active");
+
+   });
+
+   document.querySelector(".back_").addEventListener("click", (e) => {
+
+      element.classList.remove('transform-active');
+
+    });
+
+
+
+
+
+</script>
+
+</body></html>
