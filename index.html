@@ -32,7 +32,7 @@ header:nth-child(1) {
 .banner:nth-child(1) {
   display: none;
 }
-buton {
+.button_ {
   display: none;
   background-color: yellow;
 }
@@ -90,8 +90,10 @@ nav li {
     .banner:nth-child(1) {
       display: inline-block;
     }
-    buton {
+    .button_ {
+      padding: 1em;
       display: inline-block;
+      width:100%;
     }
     section {
       display: inline-block;
@@ -103,7 +105,7 @@ nav li {
       width:100%;
     }
 
-    section:nth-child(3) {
+    section.got_js {
       position: absolute;
       top:0;
       left:100%;
@@ -158,12 +160,12 @@ nav li {
       <p>list item here</p>
       <p>list item here</p>
    </section><!--
-   --><buton class="button_">Blank slate CTA - Next</buton><!--
-   --><section class="transform" id="off-canvas">
+   <button class="button_">Blank slate CTA - Next</button>
+   --><section class="transform" id="off-canvas"><!--
      <header class="banner back_" role="banner">
         <h1>Back - Blank slate headline</h1>
      </header>
-      <h2>Blank slate</h2>
+       --><h2>Blank slate</h2>
       <button>Download CTA</button>
    </section><!--
 --><section>
@@ -173,21 +175,47 @@ nav li {
 
 <script>
 
-  var element = document.getElementById("off-canvas");
+  var got_js_ = true;
 
-  document.querySelector(".button_").addEventListener("click", (e) => {
+  if(got_js_){
 
-    element.classList.add("transform-active");
+    var element = document.getElementById("off-canvas");
 
-   });
+    element.classList.add("got_js");
 
-   document.querySelector(".back_").addEventListener("click", (e) => {
+    //Back nav bar - Document objects added with JS
+    var header_ = document.createElement("header");
+    var h1_ = document.createElement("h1");
+    var textnode = document.createTextNode("Back - Blank slate headline");
+    h1_.appendChild(textnode);
+    header_.appendChild(h1_);
+    header_.classList.add("back_");
+    header_.classList.add("banner");
+    element.insertBefore(header_, element.childNodes[0]);
 
-      element.classList.remove('transform-active');
 
-    });
+    //Back nav bar - Document objects added with JS
+    var main_element = document.querySelector("main");
+    var button_ = document.createElement("button");
+    var textnode_ = document.createTextNode("Blank slate CTA - Next");
+    button_.appendChild(textnode_);
+    button_.classList.add("button_");
+    main_element.insertBefore(button_, main_element.childNodes[2]);
 
 
+    document.querySelector(".button_").addEventListener("click", (e) => {
+
+      element.classList.add("transform-active");
+
+     });
+
+     document.querySelector(".back_").addEventListener("click", (e) => {
+
+        element.classList.remove('transform-active');
+
+      });
+
+  }
 
 
 
